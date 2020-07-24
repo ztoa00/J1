@@ -1,0 +1,14 @@
+Registration: Users should be able to registe, providing a username and password 
+Login: Users, once registered, should be able to login 
+Logout: Logged in users should be able to log out 
+Search: Once a user has logged in, they should be taken to a page where they can search for a gym. 
+Users should be able to type gym name, activities, or some information. 
+After performing the search, the website should display a list of results, 
+or a message if there were no matches. If the user typed only part name, the search page should find matches too. 
+
+Gym Page: When users click on a gym from the results of the search page, they should be taken to a gym page, 
+with details about the gym: name, information, etc, and any reviews that users have left for the gym on the website. 
+Review Submission: On the gym page, users should be able to submit a review: consisting of a rating on a scale of 1 to 5, 
+as well as a text to the review where the user can write their opinion about a gym. 
+
+Users should not be able to submit multiple reviews for the same gym.

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+
+    Search_Result-Company Name
+
+{% endblock %}
+
+
+{% block body %}
+
+	<div class="container">
+            <div class="table-responsive">
+                <div>
+                    <br>
+                    <form action="{{url_for('index')}}">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <input type="submit" name="back" value="Back" class="searchBgclr">
+                    </form>
+                    <h3>Search Results :</h3>
+                </div>
+                <table class="table table-bordered table-hover resultBgclr">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Contact</th>
+                            <th>Foundation</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in rows %}
+                            <tr>
+                                <td>{{row[1]}}</td>
+                                <td>{{row[2]}}</td>
+                                <td>{{row[3]}}</td>
+                                <td>{{row[4]}}</td>
+                                <td>
+                                    <form action="{{url_for('result')}}" method="POST">
+                                        <input type="hidden" name="id" value="{{row[0]}}" hidden>
+                                        <input type="submit" name=view" value="View" class=" btn-primary">
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+{% endblock %}

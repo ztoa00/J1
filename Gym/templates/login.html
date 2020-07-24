@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+
+    Login-Company Name
+
+{% endblock %}
+
+
+{% block body %}
+
+		<div class="container" >
+			<div class="formBorderBox">
+				<div class="form">
+					<br>
+					<hr>
+					<h3 class="formTitle">Welcome back !</h3>
+					<hr>
+					<br>
+					<form  action="{{url_for('logging_in')}}" method="post">
+						<label for="email">Email :</label>
+						<input type="email" name="email" id="email" placeholder="@gmail.com" class="form-control" required autofocus>
+						<br>
+						<label for="password">Password:</label>
+						<input type="password" name="password" id="password" placeholder="Password" class="form-control" autocomplete="off" required>
+						<br>
+						<a href="#">Forgot your password?</a>
+						<br><br>
+						<input type="submit" name="login" value="LOG IN" class="btn btn-block submitBtn">
+					</form>
+					<br><br>
+					Don't Have an Account? <a href="{{url_for('signup')}}">Sign Up</a>
+					<br>
+					<hr>
+					<br>
+				</div>  
+			</div>
+		</div>
+
+{% endblock %}

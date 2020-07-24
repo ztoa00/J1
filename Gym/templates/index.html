@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+
+    Index_Page-Company Name
+
+{% endblock %}
+
+
+{% block body %}
+
+        <div class="container">
+            <form action="{{url_for('search')}}" method="POST">
+                <div class="input-group center" style="width: 900px;">
+                    <span class="input-group-addon">
+                        <select id="search_choice" name="search_choice" class="searchChoice" autofocus required>
+                            <option value="name">Name</option>
+                            <option value="contact">Contact</option>
+                            <option value="foundation">Foundation</option>
+                            <option value="phone">Phone</option>
+                            <option value="description">Description</option>
+                        </select>
+                    </span>
+                    <input type="search" name="search" placeholder="Enter a Keyword" class="form-control input-group-addon" style="height: 50px;">
+                    <span class="input-group-addon searchBgclr">
+                        <button class="glyphicon glyphicon-search searchBgclr searchButton"></button>
+                    </span>
+                </div>
+            </form>
+        </div>
+
+{% endblock %}

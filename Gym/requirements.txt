@@ -1,0 +1,7 @@
+Requirements needed :
+
+	* Flask -  pip install flask
+	* Flask-Login - pip install flask_login
+	* Flask-bcrypt - pip install flask_bcrypt
+	
+	 

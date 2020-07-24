@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+
+    {{row[1]}}-Company Name
+
+{% endblock %}
+
+
+{% block body %}
+
+        <div class="container">
+
+            <h1 style="text-align: center;"><b>{{row[1]}}</b></h1>
+            <h5 style="text-align: center;">Since {{row[3]}}</h5>
+            <br><br>
+            <pre class="resultBgclr">
+                {{row[5]}}
+            </pre>
+            <br><br>
+            <h5><b>Contact : {{row[2]}}</b></h5>
+            <h5><b>Phone : {{row[4]}}</b></h5>
+            <h5><b>Instagram : <a href="{{row[6]}}" target="_blank">{{row[6]}}</a></b></h5>
+            <h5><b>Facebook : <a href="{{row[7]}}" target="_blank">{{row[7]}}</a></b></h5>
+            <br>
+
+            <form action="{{url_for('add_review')}}" method="POST">
+                <div class="form-group">
+                    <label for="review">Review:</label>
+                    <textarea rows="5" name="review" id="review" class="form-control resultBgclr"></textarea>
+
+                    <input type="hidden" name="gid" value="{{row[0]}}" hidden>
+                    <input type="hidden" name="gname" value="{{row[1]}}" hidden>
+                    <input type="hidden" name="uid" value="{{current_user.id}}" hidden>
+                    <input type="hidden" name="uname" value="{{current_user.name}}" hidden>
+                </div>
+                <input type="submit" name="submit" value="Submit" class="btn btn-primary" style="float: right;">
+            </form>
+            <br><br><br><br>
+
+            <h5><b>All Reviews : {{reviews_count}}</b></h5>
+            <br>
+
+            {% for review in reviews %}
+                <pre style="margin-top: -1%;" class="form-control resultBgclr"><b>{{review[4]}} :</b><br>{{review[5]}}</pre>
+            {% endfor %}
+
+
+
+        </div>
+
+{% endblock %}
